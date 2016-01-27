@@ -2,7 +2,7 @@ SWEP.Author = ""
 SWEP.Contact = ""
 SWEP.Purpose = ""
 SWEP.Instructions = "Left Click to scan target."
-SWEP.Category = "Wiremod"
+SWEP.Category = "Stargate"
 
 SWEP.Spawnable = true
 SWEP.AdminOnly = false
