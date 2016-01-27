@@ -1,5 +1,5 @@
 "LightMappedGeneric"^{
-	"$baseTexture" "red_Alert"
+	"$baseTexture" "alarm_red"
 	"$surfaceprop" "Default"
 	"Proxies" { 
 		"AnimatedTexture" 
