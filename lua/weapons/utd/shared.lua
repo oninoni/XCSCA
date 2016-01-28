@@ -10,8 +10,8 @@ SWEP.ViewModelFOV = 54
 
 
 SWEP.UseHands = true
-SWEP.ViewModel  = "models/weapons/c_utd.mdl";
-SWEP.WorldModel  = "models/weapons/c_utd.mdl";
+SWEP.ViewModel  = "models/weapons/xcsca/c_utd.mdl";
+SWEP.WorldModel  = "models/weapons/xcsca/c_utd.mdl";
 
 SWEP.Primary.ClipSize = -1
 SWEP.Primary.DefaultClip = -1
