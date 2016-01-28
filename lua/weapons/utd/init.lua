@@ -17,9 +17,7 @@ end
 function SWEP:PrimaryAttack()
 	Target = self.Owner:GetEyeTraceNoCursor()
 	TargetEntity = Target["Entity"]
-	if(TargetEntity:IsWorld())then
-		print("World!")
-	else
+	if(!TargetEntity:IsWorld())then
 		local fx = EffectData()
 		fx:SetEntity(TargetEntity)
 		util.Effect("scan_effect", fx, true, true)
