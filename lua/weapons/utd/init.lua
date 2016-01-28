@@ -20,20 +20,19 @@ function SWEP:PrimaryAttack()
 	if(TargetEntity:IsWorld())then
 		print("World!")
 	else
-		TargetEntity:SetMaterial("models/wireframe", true)
+		local fx = EffectData()
+		fx:SetEntity(TargetEntity)
+		print(fx:GetEntity())
+		util.Effect("scan_effect", fx, true, true)
 	end
 end
 
 function SWEP:SecondaryAttack()
-	Target = self.Owner:GetEyeTraceNoCursor()
-	TargetEntity = Target["Entity"]
-	if(TargetEntity:IsWorld())then
-		print("World!")
-	else
-		TargetEntity:SetMaterial(TargetEntity:getMaterial(), true)
-	end
+	
 end
 
 function SWEP:Think()
-	if(Self)
+	if(Self)then
+	
+	end
 end
