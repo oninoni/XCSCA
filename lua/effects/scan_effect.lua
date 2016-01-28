@@ -4,13 +4,16 @@ function EFFECT:Init(data)
 	self.Entity:SetModel(e:GetModel())
 	self.Entity:SetPos(e:GetPos())
 	self.Entity:SetAngles(e:GetAngles())
+	//self.Entity:SetSize(e:Size())
 	self.Entity:SetMaterial("models/wireframe")
+	
+	self.Entity:SetColor(Color(math.random() *255,math.random() *255,math.random() *255,255))	//Rainbow Scan
 	
 	self.Entity:SetParent(e)
 	
 	self.min, self.max = e:GetModelBounds()
 	self.height = self.max.z - self.min.z
-	
+	self.heightExcact = self.height
 	
 	self.offset = self.height / 20
 	
@@ -22,7 +25,7 @@ end
 
 function EFFECT:Think()
 	self.scanPosition = self.scanPosition + self.height/300
-	if(self.scanPosition > self.height) then return false end
+	if(self.scanPosition > self.height * 1.5) then return false end
 	
 	//Removes the Effect when Target gets Deleted
 	
@@ -34,8 +37,8 @@ function EFFECT:Think()
 end
 
 function EFFECT:Render()
-	local normal = self.Entity:GetParent():GetUp()
-	local position = normal:Dot(self.Entity:GetParent():GetPos())
+	local normal = self.Entity:GetUp()
+	local position = normal:Dot(self.Entity:GetPos())
 	cam.Start3D(EyePos() + normal*0.01,EyeAngles())
 		render.EnableClipping(true)
 		render.PushCustomClipPlane( normal, position - self.height/2 + (self.scanPosition - self.offset))
