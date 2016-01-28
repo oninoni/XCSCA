@@ -15,7 +15,7 @@ SWEP.WorldModel  = "models/weapons/xcsca/c_utd.mdl";
 
 SWEP.Primary.ClipSize = -1
 SWEP.Primary.DefaultClip = -1
-SWEP.Primary.Automatic = false
+SWEP.Primary.Automatic = true
 SWEP.Primary.Ammo = "none"
 
 SWEP.Secondary.ClipSize = -1

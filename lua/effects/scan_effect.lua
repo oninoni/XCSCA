@@ -21,13 +21,12 @@ function EFFECT:Init(data)
 end
 
 function EFFECT:Think()
-	self.scanPosition = self.scanPosition + self.height/500
-	if(self.scanPosition > self.height) then self.scanPosition = 0 end
+	self.scanPosition = self.scanPosition + self.height/300
+	if(self.scanPosition > self.height) then return false end
 	
 	//Removes the Effect when Target gets Deleted
 	
 	if(self.Entity:GetParent() == NULL)then
-		print("Entity deleted")
 		return false
 	end
 	
@@ -46,8 +45,4 @@ function EFFECT:Render()
 		render.PopCustomClipPlane()
 		render.EnableClipping(false)
 	cam.End3D()
-	//self.Entity:SetRenderClipPlaneEnabled( true )
-	//self.Entity:SetRenderClipPlane( normal, position - height/2 + scanPosition - height/10)
-	//self.Entity:SetRenderClipPlane( normal, position - height/2 + scanPosition - height/10)
-	
 end

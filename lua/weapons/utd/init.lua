@@ -22,9 +22,9 @@ function SWEP:PrimaryAttack()
 	else
 		local fx = EffectData()
 		fx:SetEntity(TargetEntity)
-		print(fx:GetEntity())
 		util.Effect("scan_effect", fx, true, true)
 	end
+	self:SetNextPrimaryFire( CurTime() + 0.5)
 end
 
 function SWEP:SecondaryAttack()
