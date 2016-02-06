@@ -13,11 +13,12 @@ function EFFECT:Init(data)
 	
 	self.min, self.max = e:GetModelBounds()
 	
-	self.originOffset = false		//To fix Problems with Offset of Pos Vector
+	print(self.min)
+	print(self.max)
 	
-	if(self.min.z == 0)then
-		self.originOffset = true
-	end
+	self.originOffset = (math.abs(self.max.z) - math.abs(self.min.z)) / 2
+	
+	print(self.originOffset)
 	
 	self.height = self.max.z - self.min.z
 	self.heightExcact = self.height
@@ -46,11 +47,7 @@ end
 function EFFECT:Render()
 	local normal = self.Entity:GetUp()
 	local position
-	if(self.originOffset == true)then
-		position = normal:Dot(self.Entity:GetPos() + Vector(0, 0, self.height/2))
-	else
-		position = normal:Dot(self.Entity:GetPos())
-	end
+	position = normal:Dot(self.Entity:GetPos() + Vector(0, 0, self.originOffset))
 	cam.Start3D(EyePos() + normal*0.01,EyeAngles())
 		render.EnableClipping(true)
 		render.PushCustomClipPlane( normal, position - self.heightWithSpacers/2 + (self.scanPosition - self.offset))
