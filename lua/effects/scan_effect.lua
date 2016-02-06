@@ -41,8 +41,7 @@ end
 
 function EFFECT:Render()
 	local normal = self.Entity:GetUp()
-	local position
-	position = normal:Dot(self.Entity:GetPos() + Vector(0, 0, self.originOffset))
+	local position = normal:Dot(self.Entity:GetPos() + Vector(0, 0, self.originOffset))
 	cam.Start3D(EyePos() + normal*0.01,EyeAngles())
 		render.EnableClipping(true)
 		render.PushCustomClipPlane( normal, position - self.heightWithSpacers/2 + (self.scanPosition - self.offset))

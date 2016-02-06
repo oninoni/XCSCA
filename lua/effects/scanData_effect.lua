@@ -18,7 +18,5 @@ function EFFECT:Think()
 end
 
 function EFFECT:Render()
-	cam.Start3D(EyePos() + normal*0.01,EyeAngles())
-		
-	cam.End3D()
+	
 end
