@@ -21,6 +21,7 @@ function SWEP:PrimaryAttack()
 		local fx = EffectData()
 		fx:SetEntity(TargetEntity)
 		util.Effect("scan_effect", fx, true, true)
+		util.Effect("scanData_effect", fx, true, true)
 	end
 	self:SetNextPrimaryFire( CurTime() + 0.5)
 end

@@ -13,12 +13,7 @@ function EFFECT:Init(data)
 	
 	self.min, self.max = e:GetModelBounds()
 	
-	print(self.min)
-	print(self.max)
-	
 	self.originOffset = (math.abs(self.max.z) - math.abs(self.min.z)) / 2
-	
-	print(self.originOffset)
 	
 	self.height = self.max.z - self.min.z
 	self.heightExcact = self.height
