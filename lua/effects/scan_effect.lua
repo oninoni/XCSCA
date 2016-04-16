@@ -1,6 +1,7 @@
 function EFFECT:Init(data)
 	local e = data:GetEntity()
 	if(not IsValid(e))then return end
+	
 	self.Entity:SetModel(e:GetModel())
 	self.Entity:SetPos(e:GetPos())
 	self.Entity:SetAngles(e:GetAngles())
@@ -23,7 +24,6 @@ function EFFECT:Init(data)
 	self.heightWithSpacers = self.height + self.offset * 2
 	
 	self.scanPosition = 0
-	renderClip = true
 end
 
 function EFFECT:Think()
